@@ -4,15 +4,21 @@
 - definisco una variabile con il valore di un prompt che chiede età
 - casto età
 
-- definisco variabile in cui calcolo il prezzo standard di un bigletto
+- se km ed età sono numeri:
+    - se l'età è un numero intero:
+        - definisco variabile in cui calcolo il prezzo standard di un bigletto
 
-- se età < 18:
-    - calcolo 20% di sconto e definisco nuova variabile
-- altrimenti se età > 65:
-    - calcolo 40% di sconto e definisco nuova variabile
-- altrimenti:
-    - rimane prezzo standard
+        - definisco variabile del prezzo finale
 
-- approssimo il prezzo finale a due cifre decimali
+        - se età < 18:
+            - calcolo 20% di sconto 
+        - altrimenti se età > 65:
+            - calcolo 40% di sconto 
+        - altrimenti:
+            - rimane prezzo standard
 
-- stampo il prezzo finale
+        - approssimo il prezzo finale a due cifre decimali
+
+        - stampo il prezzo finale
+    - altrimenti dico che deve essere un numero intero
+- altrimenti dico di inserire due numeri

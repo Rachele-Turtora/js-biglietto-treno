@@ -1,22 +1,39 @@
 "use strict"
 
 // Asking km and age
-const km = parseInt(prompt("Quanti chilometri devi percorrere?"));
-const age = parseInt(prompt("Quanti anni hai?"));
+const km = Number(prompt("Quanti chilometri devi percorrere?"));
+const age = Number(prompt("Quanti anni hai?"));
 
-// Calculating the standard price
-let standardPrice = km * 0.21;
+if (!isNaN(km) && !isNaN(age)) {
 
-let finalPrice;
+    if (Number.isInteger(age)) {
+        
+        // Calculating the standard price
+        let standardPrice = km * 0.21;
 
-// Calculating discount
-if (age < 18) {
-    finalPrice = (standardPrice * (100 - 20)) / 100;
-} else if (age > 65) {
-    finalPrice = (standardPrice * (100 - 40)) / 100;
+        let finalPrice;
+
+        // Calculating discount
+        if (age < 18) {
+            finalPrice = (standardPrice * (100 - 20)) / 100;
+        } else if (age > 65) {
+            finalPrice = (standardPrice * (100 - 40)) / 100;
+        } else {
+            finalPrice = standardPrice;
+        }
+
+        // Printing the final price
+        console.log(`Il prezzo del tuo biglietto è: ${finalPrice.toFixed(2)}€`);
+
+    } else {
+
+        console.log("L'età deve essere un intero");
+    }
+    
 } else {
-    finalPrice = standardPrice;
+
+    console.log("Inserisci due numeri");
+
 }
 
-// Printing the final price
-console.log(`Il prezzo del tuo biglietto è: ${finalPrice.toFixed(2)}€`);
+
