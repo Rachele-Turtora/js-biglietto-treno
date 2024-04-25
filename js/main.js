@@ -9,21 +9,17 @@ if (!isNaN(km) && !isNaN(age)) {
     if (Number.isInteger(age)) {
         
         // Calculating the standard price
-        let standardPrice = km * 0.21;
-
-        let finalPrice;
+        let price = km * 0.21;
 
         // Calculating discount
         if (age < 18) {
-            finalPrice = (standardPrice * (100 - 20)) / 100;
+            price = (price * (100 - 20)) / 100;
         } else if (age > 65) {
-            finalPrice = (standardPrice * (100 - 40)) / 100;
-        } else {
-            finalPrice = standardPrice;
+            price = (price * (100 - 40)) / 100;
         }
 
         // Printing the final price
-        console.log(`Il prezzo del tuo biglietto è: ${finalPrice.toFixed(2)}€`);
+        console.log(`Il prezzo del tuo biglietto è: ${price.toFixed(2)}€`);
 
     } else {
 
