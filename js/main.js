@@ -1,21 +1,28 @@
 "use strict"
 
 // Asking km and age
-const km = Number(prompt("Quanti chilometri devi percorrere?"));
-const age = Number(prompt("Quanti anni hai?"));
+let km = prompt("Quanti chilometri devi percorrere? (es. 10)");
+let age = prompt("Quanti anni hai? (es. 30)");
+const priceKm = 0.21;
 
-if (!isNaN(km) && !isNaN(age)) {
+if (km.length > 0 && age.length > 0) {
 
-    if (Number.isInteger(age)) {
+    km = Number(km);
+    age = parseInt(age);
+
+    if ((!isNaN(km) && !isNaN(age)) && (km > 0 && age > 0)) {
         
         // Calculating the standard price
-        let price = km * 0.21;
+        let price = km * priceKm;
+
+        const discountUnder = 20;
+        const discountOver = 40;
 
         // Calculating discount
         if (age < 18) {
-            price = (price * (100 - 20)) / 100;
+            price = (price * (100 - discountUnder)) / 100;
         } else if (age > 65) {
-            price = (price * (100 - 40)) / 100;
+            price = (price * (100 - discountOver)) / 100;
         }
 
         // Printing the final price
@@ -23,12 +30,12 @@ if (!isNaN(km) && !isNaN(age)) {
 
     } else {
 
-        console.log("L'età deve essere un intero");
+        console.log(" I km e l'eta devono essere interi maggiori di zero");
     }
     
 } else {
 
-    console.log("Inserisci due numeri");
+    console.log("Non hai inserito dei valori");
 
 }
 
